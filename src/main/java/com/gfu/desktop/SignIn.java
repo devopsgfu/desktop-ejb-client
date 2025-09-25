@@ -23,21 +23,15 @@ public class SignIn {
                 "iiop://localhost:3700");  // GlassFish IIOP Port
 
         // InitialContext erstellen
-        Context context = new InitialContext(props);
+        final Context context = new InitialContext(props);
 
         // JNDI Name für Ihr EJB - Format:
         // java:global/[EAR-Name]/[EJB-JAR-Name]/[Bean-Class-Name]![Interface-Name]
-        String jndiName = "java:global/ear-module-1.0.0/ejb-module/UserServiceBean!com.example.interfaces.UserService";
+        final String jndiNameAdress = "java:global/ear-module-1.0.0/ejb-module/Address!address.Address";
+        final String jndiNameLogin = "java:global/ear-module-1.0.0/ejb-module/Login!login.Login";
 
         // Remote EJB lookup
-        addressInterface = (AddressInterface) context.lookup(jndiName);
-        loginInterface = (LoginInterface) context.lookup(jndiName);
-
-        System.out.println("✅ JNDI Lookup erfolgreich!");
+        addressInterface = (AddressInterface) context.lookup(jndiNameAdress);
+        loginInterface = (LoginInterface) context.lookup(jndiNameLogin);
     }
-
-
-
-
-
 }
