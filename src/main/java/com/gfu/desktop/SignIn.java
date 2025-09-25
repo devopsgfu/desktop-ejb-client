@@ -12,6 +12,14 @@ public class SignIn {
 
     private AddressInterface addressInterface;
     private LoginInterface loginInterface;
+
+    public SignIn() {
+        try {
+            lookupEJB();
+        } catch (NamingException e) {
+            throw new RuntimeException(e);
+        }
+    }
     private void lookupEJB() throws NamingException {
         // JNDI Properties für GlassFish
         Properties props = new Properties();
@@ -34,4 +42,13 @@ public class SignIn {
         addressInterface = (AddressInterface) context.lookup(jndiNameAdress);
         loginInterface = (LoginInterface) context.lookup(jndiNameLogin);
     }
+
+    public  AddressInterface getAddressInterface() {
+        return addressInterface;
+    }
+
+    public  LoginInterface getLoginInterface() {
+        return loginInterface;
+    }
+
 }
