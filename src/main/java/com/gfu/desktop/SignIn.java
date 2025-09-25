@@ -35,8 +35,8 @@ public class SignIn {
 
         // JNDI Name für Ihr EJB - Format:
         // java:global/[EAR-Name]/[EJB-JAR-Name]/[Bean-Class-Name]![Interface-Name]
-        final String jndiNameAdress = "java:global/ear-module-1.0.0/ejb-module/Address!address.Address";
-        final String jndiNameLogin = "java:global/ear-module-1.0.0/ejb-module/Login!login.Login";
+        final String jndiNameAdress = "java:global/ear-module-1.0.0/ejb-module/Address!address.AddressInterface";
+        final String jndiNameLogin = "java:global/ear-module-1.0.0/ejb-module/Login!login.LoginInterface";
 
         // Remote EJB lookup
         addressInterface = (AddressInterface) context.lookup(jndiNameAdress);
