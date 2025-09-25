@@ -70,7 +70,7 @@
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>shared-ejb</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>

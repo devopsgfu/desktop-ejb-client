@@ -1,11 +1,12 @@
 package com.gfu.desktop;
 
+import com.example.sharedejb.AddressInterface;
+import com.example.sharedejb.LoginInterface;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Properties;
-import address.AddressInterface;
-import login.LoginInterface;
 
 public class SignIn {
 
@@ -32,8 +33,8 @@ public class SignIn {
 
         // JNDI Name für Ihr EJB - Format:
         // java:global/[EAR-Name]/[EJB-JAR-Name]/[Bean-Class-Name]![Interface-Name]
-        final String jndiNameAdress = "java:global/ear-module-1.0.0/ejb-module/Address!address.AddressInterface";
-        final String jndiNameLogin = "java:global/ear-module-1.0.0/ejb-module/Login!login.LoginInterface";
+        final String jndiNameAdress = "java:global/ear-module-1.0.0/ejb-module/Address!com.example.sharedejb.AddressInterface";
+        final String jndiNameLogin = "java:global/ear-module-1.0.0/ejb-module/Login!com.example.sharedejb.LoginInterface";
         addressInterface = lookupEJB(jndiNameAdress, AddressInterface.class);
     }
 
