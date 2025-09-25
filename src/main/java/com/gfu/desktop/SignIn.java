@@ -4,12 +4,14 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Properties;
+import address.AddressInterface;
+import login.LoginInterface;
 
 public class SignIn {
 
 
-    //AddressService addressService;
-    //LoginService loginService;
+    private AddressInterface addressInterface;
+    private LoginInterface loginInterface;
     private void lookupEJB() throws NamingException {
         // JNDI Properties für GlassFish
         Properties props = new Properties();
@@ -28,8 +30,8 @@ public class SignIn {
         String jndiName = "java:global/ear-module-1.0.0/ejb-module/UserServiceBean!com.example.interfaces.UserService";
 
         // Remote EJB lookup
-    //    addressService = (addressService) context.lookup(jndiName);
-     //   loginService = (loginService) context.lookup(jndiName);
+        addressInterface = (AddressInterface) context.lookup(jndiName);
+        loginInterface = (LoginInterface) context.lookup(jndiName);
 
         System.out.println("✅ JNDI Lookup erfolgreich!");
     }

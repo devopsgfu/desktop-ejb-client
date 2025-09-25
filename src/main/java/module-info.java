@@ -8,6 +8,7 @@ module com.gfu.desktop {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires java.naming;
+    requires shared.ejb;
 
     opens com.gfu.desktop to javafx.fxml;
     exports com.gfu.desktop;

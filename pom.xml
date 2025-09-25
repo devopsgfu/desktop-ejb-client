@@ -17,8 +17,8 @@
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
-             <artifactId>shared-ejb</artifactId>
-             <version>1.0.0</version>
+            <artifactId>shared-ejb</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
