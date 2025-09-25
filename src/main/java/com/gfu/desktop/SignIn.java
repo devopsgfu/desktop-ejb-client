@@ -4,12 +4,14 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Properties;
+import address.AddressInterface;
+import login.LoginInterface;
 
 public class SignIn {
 
 
-    //AddressService addressService;
-    //LoginService loginService;
+    AddressService addressService;
+    LoginService loginService;
     private void lookupEJB() throws NamingException {
         // JNDI Properties für GlassFish
         Properties props = new Properties();
